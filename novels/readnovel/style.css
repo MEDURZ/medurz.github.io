@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap');
 @import url('fonts/Solaire Rough.otf');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/trajan-pro');
+@import url('https://db.onlinewebfonts.com/c/ba69ea70a1f187353aa8dc0ff159cce9?family=Bellfort');
 
 @font-face {
     font-family: 'Solaire Rough';
-    src: url('/fonts/Solaire Rough.otf') format('opentype');
+    src: url('/fonts/Solaire Rough.otf') format('otf');
 }
 
 :root{
@@ -68,14 +70,24 @@ h1{
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    color: transparent;
+    letter-spacing: 1px;
+}
+.header .title.energy{
     font-family: 'Playfair Display';
     font-weight: 700;
     font-size: 40px;
-    letter-spacing: 1px;
+    color: transparent;
     background: linear-gradient(45deg, #ff0035, #733add, #0084ff);
     background-clip: text;
     text-shadow: 2px 2px 2px rgba(41, 41, 41, 0.438);
+}
+.header .title.lost{
+    font-size: 50px;
+    font-family: 'Bellfort';
+    letter-spacing: 2px;
+    font-weight: 400;
+    padding-bottom: 6px;
+    color: #eee;
 }
 .header .nav{
     display: flex;
@@ -141,6 +153,12 @@ h1{
     font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
     font-weight: 600;
+    font-style: italic;
+}
+.novel .page .chapter-content p b{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    font-weight: 800;
     font-style: italic;
 }
 .chapter-sum{
@@ -232,6 +250,47 @@ h1{
 .chapter-sum ul a li:hover{
     background: #ccc;
 }
+.langs{
+    position: fixed;
+    left: 8%;
+    bottom: 50px;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+}
+.langs button{
+    width: 50%;
+    height: 100%;
+    padding: 3px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    background: #eee;
+    color: #111;
+    font-size: 14px;
+    border: 1px solid #666;
+    outline: none;
+    font-weight: 500;
+    cursor: pointer;
+    gap: 4px;
+}
+.langs button:hover{
+    transform: scale(1.1);
+}
+.langs button:active{
+    transform: scale(0.9);
+}
+#ar{
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+#en{
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
 .footer{
     position: relative;
     bottom: 0;
@@ -308,7 +367,7 @@ h1{
     }
 
     .header .title{
-        font-size: 30px;
+        font-size: 50px;
     }
     .novel{
         padding: 40px 4px;
@@ -323,7 +382,7 @@ h1{
 @media (max-width: 450px) {
     
     .header .title{
-        font-size: 20px;
+        font-size: 40px;
     }
     .footer .copy p{
         font-size: 15px;
