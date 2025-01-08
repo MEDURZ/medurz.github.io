@@ -89,6 +89,14 @@ h1{
     padding-bottom: 6px;
     color: #eee;
 }
+.header .title.pg{
+    font-size: 30px;
+    font-family: 'Trajan Pro', sans-serif;
+    letter-spacing: 2px;
+    font-weight: 400;
+    padding-bottom: 6px;
+    color: #eee;
+}
 .header .nav{
     display: flex;
     justify-content: space-between;
@@ -157,7 +165,7 @@ h1{
 }
 .novel .page .chapter-content p b{
     font-family: 'Times New Roman', Times, serif;
-    font-size: 30px;
+    font-size: 26px;
     font-weight: 800;
     font-style: italic;
 }
