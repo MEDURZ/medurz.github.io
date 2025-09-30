@@ -11,7 +11,7 @@ var typed = new Typed('.typed', {
         'Developer',
         'Gamer',
         'Designer',
-        'Writter',
+        'Writer',
         'Engineer'
     ],
     typeSpeed: 100,
@@ -20,4 +20,5 @@ var typed = new Typed('.typed', {
     cursorChar: '|',
     backDelay: 1500,
   });
+
 
