@@ -341,6 +341,7 @@ section{
     gap: 15px 30px;
     align-items: center;
     justify-content: center;
+    grid-auto-flow: row;
 }
 
 .container .cards .card{
@@ -883,3 +884,4 @@ section{
         transform: translateY(-10px);
     }
 }
+
