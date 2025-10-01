@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&family=Pixelify+Sans:wght@400..700&display=swap');
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #112;
+    margin: 10px; /* Reduced margin for smaller screens */
+    overflow: hidden;
+    position: relative;
+    font-size: 16px; /* Base font size */
+    line-height: 1.5;
+}
+
+h1 {
+    color: #eee;
+    z-index: 10;
+    position: relative;
+    font-size: 3em; /* Default for larger screens */
+    text-align: center;
+    margin-bottom: 15px;
+    font-family: "Jersey 15", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.controls {
+    margin-bottom: 20px;
+    z-index: 10;
+    position: relative;
+    display: flex; /* Use flexbox for controls */
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    justify-content: center; /* Center buttons */
+    gap: 10px; /* Space between buttons */
+    padding: 0 10px; /* Add some padding on sides */
+    max-width: 100%; /* Ensure controls don't overflow */
+}
+
+button {
+    padding: 8px 12px; /* Slightly smaller padding */
+    font-size: 18px; /* Slightly smaller font size */
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0; /* Prevent buttons from shrinking too much */
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button.tool-btn.active {
+    background-color: #28a745;
+}
+
+button.tool-btn.active:hover {
+    background-color: #218838;
+}
+
+#grid-container {
+    display: grid;
+    border: 1px solid #111;
+    background-color: #223;
+    z-index: 10;
+    position: relative;
+    /* Max width to ensure it doesn't get too big on very large screens */
+    max-width: calc(100% - 20px); /* Leave some margin */
+    box-sizing: border-box; /* Include padding and border in element's total width/height */
+}
+
+.cell {
+    background-color: #223;
+    border: 1px solid #334;
+    box-sizing: border-box; /* Crucial for consistent cell sizing with borders */
+}
+
+.cell.alive {
+    background-color: #eee;
+}
+
+/* Background Game of Life styles */
+#background-grid-container {
+    position: fixed; /* Use fixed so it covers the entire viewport even on scroll */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    background-color: transparent;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.bg-cell {
+    opacity: 0.07; /* Even fainter */
+    background-color: #112;
+    border: none;
+}
+
+.bg-cell.alive {
+    background-color: #445;
+}
+
+
+/* --- Media Queries for Responsiveness --- */
+
+/* Small screens (e.g., phones in portrait) */
+@media (max-width: 600px) {
+    body {
+        margin: 5px;
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    .controls {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 5px;
+        padding: 0;
+    }
+
+    button {
+        width: 100%; /* Make buttons full width */
+        padding: 10px 15px;
+        font-size: 16px;
+    }
+
+    #grid-container {
+        max-width: calc(100vw - 10px); /* Tighter fit on mobile */
+        max-height: calc(100vw - 10px); /* Keep it square */
+    }
+}
+
+/* Medium screens (e.g., tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    button {
+        padding: 9px 14px;
+        font-size: 15px;
+    }
+
+    #grid-container {
+        max-width: 80vw;
+        max-height: 80vh;
+    }
+}
